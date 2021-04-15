@@ -9,14 +9,15 @@
 <script>
 export default {
   name: 'HelloWorld',
+  props: {
+    msg: String
+  },
   data() {
     return {
       helloMessage: ''
     }
   },
-  props: {
-    msg: String
-  },
+  
   mounted() {
     this.$hello_api.getHelloMessage().then( resp => {
       this.helloMessage = resp.message
